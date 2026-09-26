@@ -15,8 +15,7 @@ import yaml
 
 from .data import load_dataset
 from .dedup import template_ids
-from .evaluate import (bootstrap_ci, macro_f1, per_class_report,
-                       review_routing_curve, slice_report)
+from .evaluate import bootstrap_ci, macro_f1, per_class_report, review_routing_curve, slice_report
 from .models import HierarchicalClassifier, build_text_pipeline
 from .split import grouped_split, random_split
 

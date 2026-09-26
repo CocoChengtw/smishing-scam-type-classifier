@@ -7,7 +7,7 @@ We assign every message a *template id* and split by template, not by row.
 """
 from __future__ import annotations
 
-from typing import Iterable
+from collections.abc import Iterable
 
 import numpy as np
 from datasketch import MinHash, MinHashLSH
