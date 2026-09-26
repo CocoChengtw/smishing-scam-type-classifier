@@ -1,0 +1,206 @@
+{
+  "dataset": {
+    "messages": 33788,
+    "templates": 18728,
+    "exact_duplicates": 9143,
+    "label_distribution": {
+      "banking": 15277,
+      "others": 6922,
+      "delivery": 3810,
+      "government": 3248,
+      "telecom": 2226,
+      "spam": 1710,
+      "wrong_number": 332,
+      "family_impersonation": 263
+    }
+  },
+  "leakage_check": {
+    "random_row_split": 0.829,
+    "template_grouped_split": 0.8
+  },
+  "models": [
+    {
+      "model": "flat_unweighted",
+      "macro_f1": 0.795,
+      "macro_f1_ci95": [
+        0.77,
+        0.817
+      ],
+      "macro_f1_unique_templates": 0.771,
+      "accuracy": 0.832
+    },
+    {
+      "model": "flat_balanced",
+      "macro_f1": 0.8,
+      "macro_f1_ci95": [
+        0.777,
+        0.818
+      ],
+      "macro_f1_unique_templates": 0.775,
+      "accuracy": 0.828
+    },
+    {
+      "model": "flat_balanced_template_cap",
+      "macro_f1": 0.801,
+      "macro_f1_ci95": [
+        0.777,
+        0.819
+      ],
+      "macro_f1_unique_templates": 0.777,
+      "accuracy": 0.831
+    },
+    {
+      "model": "hierarchical_template_cap",
+      "macro_f1": 0.797,
+      "macro_f1_ci95": [
+        0.774,
+        0.815
+      ],
+      "macro_f1_unique_templates": 0.769,
+      "accuracy": 0.829
+    }
+  ],
+  "learned_groups": [
+    [
+      "banking",
+      "government",
+      "others",
+      "spam",
+      "telecom",
+      "wrong_number"
+    ],
+    [
+      "delivery"
+    ],
+    [
+      "family_impersonation"
+    ]
+  ],
+  "best_model": "flat_balanced_template_cap",
+  "per_class": {
+    "banking": {
+      "precision": 0.925,
+      "recall": 0.915,
+      "f1": 0.92,
+      "support": 2866
+    },
+    "delivery": {
+      "precision": 0.937,
+      "recall": 0.904,
+      "f1": 0.92,
+      "support": 769
+    },
+    "family_impersonation": {
+      "precision": 0.979,
+      "recall": 0.979,
+      "f1": 0.979,
+      "support": 48
+    },
+    "government": {
+      "precision": 0.803,
+      "recall": 0.803,
+      "f1": 0.803,
+      "support": 589
+    },
+    "others": {
+      "precision": 0.665,
+      "recall": 0.67,
+      "f1": 0.667,
+      "support": 1337
+    },
+    "spam": {
+      "precision": 0.621,
+      "recall": 0.693,
+      "f1": 0.655,
+      "support": 349
+    },
+    "telecom": {
+      "precision": 0.808,
+      "recall": 0.785,
+      "f1": 0.796,
+      "support": 446
+    },
+    "wrong_number": {
+      "precision": 0.593,
+      "recall": 0.761,
+      "f1": 0.667,
+      "support": 71
+    }
+  },
+  "per_language": [
+    {
+      "language": "English",
+      "n": 4021,
+      "macro_f1": 0.816
+    },
+    {
+      "language": "Spanish",
+      "n": 1043,
+      "macro_f1": 0.788
+    },
+    {
+      "language": "Dutch",
+      "n": 419,
+      "macro_f1": 0.649
+    },
+    {
+      "language": "French",
+      "n": 221,
+      "macro_f1": 0.78
+    },
+    {
+      "language": "Italian",
+      "n": 165,
+      "macro_f1": 0.688
+    },
+    {
+      "language": "German",
+      "n": 153,
+      "macro_f1": 0.544
+    }
+  ],
+  "review_routing": [
+    {
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "accuracy": 0.831,
+      "macro_f1": 0.801
+    },
+    {
+      "threshold": 0.5,
+      "coverage": 0.872,
+      "accuracy": 0.887,
+      "macro_f1": 0.858
+    },
+    {
+      "threshold": 0.6,
+      "coverage": 0.787,
+      "accuracy": 0.919,
+      "macro_f1": 0.887
+    },
+    {
+      "threshold": 0.7,
+      "coverage": 0.709,
+      "accuracy": 0.946,
+      "macro_f1": 0.914
+    },
+    {
+      "threshold": 0.8,
+      "coverage": 0.605,
+      "accuracy": 0.968,
+      "macro_f1": 0.936
+    },
+    {
+      "threshold": 0.9,
+      "coverage": 0.465,
+      "accuracy": 0.982,
+      "macro_f1": 0.949
+    },
+    {
+      "threshold": 0.95,
+      "coverage": 0.355,
+      "accuracy": 0.994,
+      "macro_f1": 0.979
+    }
+  ]
+}

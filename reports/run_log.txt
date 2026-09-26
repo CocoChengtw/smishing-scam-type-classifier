@@ -1,0 +1,16 @@
+messages=33788 labels=['banking', 'delivery', 'family_impersonation', 'government', 'others', 'spam', 'telecom', 'wrong_number']
+templates=18728 (55.4% of rows) exact_dups=9143 (28s)
+Leakage check (flat, class-balanced):
+  random_row_split: macro-F1=0.829 (test n=6758)
+  template_grouped_split: macro-F1=0.8 (test n=6475)
+train=27313 (capped=21006) test=6475 test_unique_templates=3748
+  fit flat_unweighted in 22s
+  flat_unweighted: {'model': 'flat_unweighted', 'macro_f1': 0.795, 'macro_f1_ci95': [0.77, 0.817], 'macro_f1_unique_templates': 0.771, 'accuracy': 0.832}  (8s)
+  fit flat_balanced in 23s
+  flat_balanced: {'model': 'flat_balanced', 'macro_f1': 0.8, 'macro_f1_ci95': [0.777, 0.818], 'macro_f1_unique_templates': 0.775, 'accuracy': 0.828}  (8s)
+  fit flat_balanced_template_cap in 21s
+  flat_balanced_template_cap: {'model': 'flat_balanced_template_cap', 'macro_f1': 0.801, 'macro_f1_ci95': [0.777, 0.819], 'macro_f1_unique_templates': 0.777, 'accuracy': 0.831}  (8s)
+  fit hierarchical_template_cap in 69s
+  hierarchical_template_cap: {'model': 'hierarchical_template_cap', 'macro_f1': 0.797, 'macro_f1_ci95': [0.774, 0.815], 'macro_f1_unique_templates': 0.769, 'accuracy': 0.829}  (9s)
+learned groups: [['banking', 'government', 'others', 'spam', 'telecom', 'wrong_number'], ['delivery'], ['family_impersonation']]
+best model: flat_balanced_template_cap
